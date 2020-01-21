@@ -18,7 +18,8 @@ class ArticleListCoordinator: BaseCoordinator<Void> {
     }
     
     override func start() -> Observable<Void> {
-        let viewModel = ArticleListViewModel()
+        let articleRepository = ArticlesDataRepository(remoteDataSource: NewsAPISerivce.shared)
+        let viewModel = ArticleListViewModel(dataRepo: articleRepository)
         let viewController: ArticleListViewController = Storyboards.main.instantiate()!
         let navigationController = UINavigationController(rootViewController: viewController)
         

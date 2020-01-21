@@ -7,7 +7,40 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class ArticleListViewModel {
+    
+    let loaded: AnyObserver<Void>
+    let reload: AnyObserver<Void>
+    
+    let data: Observable<[ArticleViewModel]>
+    let articleRepository: ArticleRepository
+    
+    let loadedData = BehaviorRelay<[ArticleViewModel]>(value: [])
+    
+    init(dataRepo: ArticleRepository) {
+        self.articleRepository = dataRepo
+        
+        //self.data = articleRepository.
+        
+        let _loaded = PublishSubject<Void>()
+        self.loaded = _loaded.asObserver()
+        
+        let _reload = PublishSubject<Void>()
+        self.reload = _reload.asObserver()
+        
+        data = loadedData.asObservable()
+        
+        let loadNext = _loaded.flatMapLatest { _ -> Observable<[ArticleViewModel]> in
+            return self.articleRepository.fetchTopHeadlines()
+                .map{ $0.map { ArticleViewModel(article: $0) } }
+        }
+        
+        _ = loadNext.subscribe(onNext: { (articles) in
+            self.loadedData.accept(self.loadedData.value + articles)
+        })
+    }
     
 }
