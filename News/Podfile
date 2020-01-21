@@ -4,6 +4,7 @@
 def swiftPods
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Alamofire'
 end
 
 target 'News' do
