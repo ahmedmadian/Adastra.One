@@ -13,10 +13,10 @@ protocol NewsAPIServiceable: BaseRemoteService {
     func fetchArticles(with endPoint: Endpointable) -> Observable<[Article]>
 }
 
-class NewsAPIRemoteDataSource: NewsAPIServiceable {
+class NewsAPISerivce: NewsAPIServiceable {
     
     //MARK:- Properties
-    static let shared = NewsAPIRemoteDataSource()
+    static let shared = NewsAPISerivce()
     
     // MARK:- Initializers
     private init() {}
