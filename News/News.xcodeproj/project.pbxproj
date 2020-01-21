@@ -15,6 +15,7 @@
 		DED7C03423D7420400D90075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED7C03223D7420400D90075 /* LaunchScreen.storyboard */; };
 		DED7C03D23D7530E00D90075 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C03C23D7530E00D90075 /* BaseCoordinator.swift */; };
 		DED7C04023D7535300D90075 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C03F23D7535300D90075 /* AppCoordinator.swift */; };
+		DED7C04223D754D700D90075 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C04123D754D700D90075 /* Storyboards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DED7C03523D7420400D90075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DED7C03C23D7530E00D90075 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		DED7C03F23D7535300D90075 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		DED7C04123D754D700D90075 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		ED44616CECC27AE264970E17 /* Pods-News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.debug.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.debug.xcconfig"; sourceTree = "<group>"; };
 		F7BDBC39933487431CB6BEE6 /* Pods_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				DED7C03C23D7530E00D90075 /* BaseCoordinator.swift */,
+				DED7C04123D754D700D90075 /* Storyboards.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DED7C04023D7535300D90075 /* AppCoordinator.swift in Sources */,
+				DED7C04223D754D700D90075 /* Storyboards.swift in Sources */,
 				DED7C02C23D7420200D90075 /* ViewController.swift in Sources */,
 				DED7C03D23D7530E00D90075 /* BaseCoordinator.swift in Sources */,
 				DED7C02823D7420200D90075 /* AppDelegate.swift in Sources */,
