@@ -17,6 +17,7 @@ class ArticleListViewModel {
     
     let data: Observable<[ArticleViewModel]>
     let title: Observable<String>
+    let loading: Observable<Bool>
     let articleRepository: ArticleRepository
     
     let loadedData = BehaviorRelay<[ArticleViewModel]>(value: [])
@@ -32,16 +33,22 @@ class ArticleListViewModel {
         let _reload = PublishSubject<Void>()
         self.reload = _reload.asObserver()
         
+        let activityIndicator = ActivityIndicator()
+        loading = activityIndicator.asObservable()
+        
         data = loadedData.asObservable()
         
         let loadNext = _loaded.flatMapLatest { _ -> Observable<[ArticleViewModel]> in
             return self.articleRepository.fetchTopHeadlines()
+                .trackActivity(activityIndicator)
                 .map{ $0.map { ArticleViewModel(article: $0) } }
         }
         
         _ = loadNext.subscribe(onNext: { (articles) in
             self.loadedData.accept(self.loadedData.value + articles)
         })
+        
+        
     }
     
 }

@@ -34,6 +34,8 @@
 		DED7C07E23D7822400D90075 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED7C07C23D7822400D90075 /* ArticleCell.xib */; };
 		DED7C08023D7823F00D90075 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C07F23D7823F00D90075 /* ArticleViewModel.swift */; };
 		DED7C08223D79A5D00D90075 /* UIView+typeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C08123D79A5D00D90075 /* UIView+typeName.swift */; };
+		DED7C08423D7AE5B00D90075 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C08323D7AE5B00D90075 /* BaseViewController.swift */; };
+		DED7C08623D7B23A00D90075 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C08523D7B23A00D90075 /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		DED7C07C23D7822400D90075 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		DED7C07F23D7823F00D90075 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		DED7C08123D79A5D00D90075 /* UIView+typeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+typeName.swift"; sourceTree = "<group>"; };
+		DED7C08323D7AE5B00D90075 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DED7C08523D7B23A00D90075 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		ED44616CECC27AE264970E17 /* Pods-News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.debug.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.debug.xcconfig"; sourceTree = "<group>"; };
 		F7BDBC39933487431CB6BEE6 /* Pods_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +145,8 @@
 				DED7C05E23D770B100D90075 /* Dictionary+Merge.swift */,
 				DED7C06423D7719B00D90075 /* Error+Code.swift */,
 				DED7C08123D79A5D00D90075 /* UIView+typeName.swift */,
+				DED7C08323D7AE5B00D90075 /* BaseViewController.swift */,
+				DED7C08523D7B23A00D90075 /* ActivityIndicator.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -366,6 +372,8 @@
 				DED7C04023D7535300D90075 /* AppCoordinator.swift in Sources */,
 				DED7C07523D77C8C00D90075 /* ArticleListViewModel.swift in Sources */,
 				DED7C06123D7711000D90075 /* BaseServiceError.swift in Sources */,
+				DED7C08423D7AE5B00D90075 /* BaseViewController.swift in Sources */,
+				DED7C08623D7B23A00D90075 /* ActivityIndicator.swift in Sources */,
 				DED7C07723D77EAA00D90075 /* ArticleListCoordinator.swift in Sources */,
 				DED7C04223D754D700D90075 /* Storyboards.swift in Sources */,
 				DED7C07223D77C1E00D90075 /* ArticleListViewController.swift in Sources */,

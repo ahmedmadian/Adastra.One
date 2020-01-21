@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ArticleListViewController: UIViewController {
+class ArticleListViewController: BaseViewController {
 
     //MARK:- IBOutlet
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +20,7 @@ class ArticleListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.showLoader()
         registerCells()
         setupBindings()
     }
@@ -30,6 +31,14 @@ class ArticleListViewController: UIViewController {
             .take(1)
             .map { _ in }
             .bind(to: viewModel.loaded)
+    
+        viewModel.loading.subscribe(onNext: { loading in
+            if loading {
+                self.showLoader()
+            } else {
+                self.hideLoader()
+            }
+            }).disposed(by: disposeBag)
         
         viewModel.title
             .bind(to: navigationItem.rx.title)
@@ -37,6 +46,7 @@ class ArticleListViewController: UIViewController {
         
         viewModel.data
             .observeOn(MainScheduler.instance)
+            //.do(onNext: { [weak self] _ in self?.hideLoader() })
             .bind(to: tableView.rx.items(cellIdentifier: ArticleCell.typeName, cellType: ArticleCell.self)) { item, data, cell in
                 cell.configCellAppearnce(with: data)
             }.disposed(by: disposeBag)
