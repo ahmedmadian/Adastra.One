@@ -15,17 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pnt-gP-Iw8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pnt-gP-Iw8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pnt-gP-Iw8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5h2-fq-sjH"/>
-                            <constraint firstItem="pnt-gP-Iw8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ej9-Sg-pn8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pnt-gP-Iw8" secondAttribute="bottom" id="c78-41-3vh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pnt-gP-Iw8" secondAttribute="trailing" id="m6k-yN-OXq"/>
+                            <constraint firstItem="pnt-gP-Iw8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5h2-fq-sjH"/>
+                            <constraint firstItem="pnt-gP-Iw8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ej9-Sg-pn8"/>
+                            <constraint firstAttribute="bottom" secondItem="pnt-gP-Iw8" secondAttribute="bottom" id="c78-41-3vh"/>
+                            <constraint firstAttribute="trailing" secondItem="pnt-gP-Iw8" secondAttribute="trailing" id="m6k-yN-OXq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

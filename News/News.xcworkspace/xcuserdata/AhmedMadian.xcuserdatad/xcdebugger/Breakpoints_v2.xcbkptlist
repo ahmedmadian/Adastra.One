@@ -3,4 +3,54 @@
    uuid = "989E3C48-F5EB-4712-B2D9-B23CFE4D1562"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC6AC706-DEF5-4E7D-9986-6C7C4EBC4A02"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News/Modules/ArticleList/ArticleCell/ArticleViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "init(article:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FC6AC706-DEF5-4E7D-9986-6C7C4EBC4A02 - a4815fddd847563d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News.ArticleViewModel.__allocating_init(article: News.Article) -&gt; News.ArticleViewModel"
+                  moduleName = "News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AhmedMadian/Developer/Adastra.One/News/News/Modules/ArticleList/ArticleCell/ArticleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "FC6AC706-DEF5-4E7D-9986-6C7C4EBC4A02 - 5a99151ffc71265"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News.ArticleViewModel.init(article: News.Article) -&gt; News.ArticleViewModel"
+                  moduleName = "News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AhmedMadian/Developer/Adastra.One/News/News/Modules/ArticleList/ArticleCell/ArticleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "121">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

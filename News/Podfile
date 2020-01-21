@@ -5,6 +5,7 @@ def swiftPods
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Alamofire'
+  pod 'SDWebImage'
 end
 
 target 'News' do

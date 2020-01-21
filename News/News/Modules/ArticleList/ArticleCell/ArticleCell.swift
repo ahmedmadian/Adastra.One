@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ArticleCell: UITableViewCell {
     //MARK:- IBOutlet
@@ -17,6 +18,21 @@ class ArticleCell: UITableViewCell {
     
     
     func configCellAppearnce(with viewModel: ArticleViewModel) {
+        articleImageView.makeRoundedCorners(with: 15.0)
+        containerView.makeRoundedCorners(with: 20)
+        articleImageView.sd_setImage(with: URL(string: viewModel.posterImageURL), placeholderImage: nil)
+        self.headlineLabel.text = viewModel.headline
+        self.puplishedDateLabel.text = viewModel.date
+        animateCell()
     }
     
+    private func animateCell() {
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, 50, 0)
+        self.layer.transform = rotationTransform
+        self.alpha = 0.5
+        UIView.animate(withDuration: 1.0) {
+            self.layer.transform = CATransform3DIdentity
+            self.alpha = 1.0
+        }
+    }
 }

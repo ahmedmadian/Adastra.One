@@ -20,7 +20,7 @@ class ArticleViewModel {
     init(article: Article) {
         self.posterImageURL = article.urlToImage ?? ""
         self.headline = article.title
-        self.date = ""
+        self.date = article.publishedAt ?? ""
         self.authorName = article.author ?? ""
         self.articleDescription = article.articleDescription ?? ""
         self.url = article.url
