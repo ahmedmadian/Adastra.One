@@ -27,7 +27,13 @@ class ArticleListViewController: UIViewController {
     private func setupBindings() {
         
         rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
-            .take(1).map{ _ in }.bind(to: viewModel.loaded)
+            .take(1)
+            .map { _ in }
+            .bind(to: viewModel.loaded)
+        
+        viewModel.title
+            .bind(to: navigationItem.rx.title)
+            .disposed(by: disposeBag)
         
         viewModel.data
             .observeOn(MainScheduler.instance)

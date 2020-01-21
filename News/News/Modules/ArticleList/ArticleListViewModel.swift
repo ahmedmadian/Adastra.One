@@ -16,13 +16,14 @@ class ArticleListViewModel {
     let reload: AnyObserver<Void>
     
     let data: Observable<[ArticleViewModel]>
+    let title: Observable<String>
     let articleRepository: ArticleRepository
     
     let loadedData = BehaviorRelay<[ArticleViewModel]>(value: [])
     
     init(dataRepo: ArticleRepository) {
         self.articleRepository = dataRepo
-        
+        self.title = Observable.just("Top Headlines")
         //self.data = articleRepository.
         
         let _loaded = PublishSubject<Void>()

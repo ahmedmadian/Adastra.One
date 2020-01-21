@@ -21,7 +21,7 @@ class ArticleListCoordinator: BaseCoordinator<Void> {
         let articleRepository = ArticlesDataRepository(remoteDataSource: NewsAPISerivce.shared)
         let viewModel = ArticleListViewModel(dataRepo: articleRepository)
         let viewController: ArticleListViewController = Storyboards.main.instantiate()!
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let navigationController = self.setupNavigationController(rootViewController: viewController)
         
         viewController.viewModel = viewModel
 
@@ -29,6 +29,12 @@ class ArticleListCoordinator: BaseCoordinator<Void> {
         window.makeKeyAndVisible()
         
         return Observable.never()
+    }
+    
+    private func setupNavigationController(rootViewController:  UIViewController) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.navigationBar.prefersLargeTitles = true
+        return navigationController
     }
     
 }
