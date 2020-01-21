@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6F721322FC11639D61E9C828 /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BDBC39933487431CB6BEE6 /* Pods_News.framework */; };
 		DED7C02823D7420200D90075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C02723D7420200D90075 /* AppDelegate.swift */; };
-		DED7C02A23D7420200D90075 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C02923D7420200D90075 /* SceneDelegate.swift */; };
 		DED7C02C23D7420200D90075 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C02B23D7420200D90075 /* ViewController.swift */; };
 		DED7C02F23D7420200D90075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED7C02D23D7420200D90075 /* Main.storyboard */; };
 		DED7C03123D7420400D90075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED7C03023D7420400D90075 /* Assets.xcassets */; };
@@ -20,7 +19,6 @@
 		949A561C64BEB6225F4CDDFB /* Pods-News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.release.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.release.xcconfig"; sourceTree = "<group>"; };
 		DED7C02423D7420200D90075 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED7C02723D7420200D90075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DED7C02923D7420200D90075 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DED7C02B23D7420200D90075 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DED7C02E23D7420200D90075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DED7C03023D7420400D90075 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 				ED44616CECC27AE264970E17 /* Pods-News.debug.xcconfig */,
 				949A561C64BEB6225F4CDDFB /* Pods-News.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				DED7C02723D7420200D90075 /* AppDelegate.swift */,
-				DED7C02923D7420200D90075 /* SceneDelegate.swift */,
 				DED7C02B23D7420200D90075 /* ViewController.swift */,
 				DED7C02D23D7420200D90075 /* Main.storyboard */,
 				DED7C03023D7420400D90075 /* Assets.xcassets */,
@@ -103,6 +99,7 @@
 				DED7C02023D7420200D90075 /* Sources */,
 				DED7C02123D7420200D90075 /* Frameworks */,
 				DED7C02223D7420200D90075 /* Resources */,
+				A003EC1EF7365FF8BAB35EBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,6 +179,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A003EC1EF7365FF8BAB35EBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-News/Pods-News-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-News/Pods-News-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-News/Pods-News-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -191,7 +205,6 @@
 			files = (
 				DED7C02C23D7420200D90075 /* ViewController.swift in Sources */,
 				DED7C02823D7420200D90075 /* AppDelegate.swift in Sources */,
-				DED7C02A23D7420200D90075 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
