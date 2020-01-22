@@ -17,9 +17,10 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
     
     override func prepareTransition(for route: AppStartUpRoute) -> NavigationTransition {
         switch route {
+        
         case .articles:
             let articleRepository = ArticlesDataRepository(remoteDataSource: NewsAPISerivce.shared)
-            let viewModel = ArticleListViewModel(dataRepo: articleRepository)
+            let viewModel = ArticleListViewModel(router: self.unownedRouter, dataRepo: articleRepository)
             let viewController: ArticleListViewController = Storyboards.main.instantiate()!
             viewController.bind(to: viewModel)
             

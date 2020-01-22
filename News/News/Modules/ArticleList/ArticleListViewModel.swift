@@ -8,53 +8,41 @@
 
 import Foundation
 import RxSwift
+import XCoordinator
 import RxCocoa
 
 class ArticleListViewModel: ArticleListViewModelType, ArticleListViewModelInput, ArticleListViewModelOutput{
    
-    // Input
+    //MARK:-  Input
+    /// View Controller UI actions to the View Model
     var loaded: AnyObserver<Void>
-    
-    var reload: AnyObserver<Void>
+    var selectedArticle: PublishSubject<ArticleViewModel>
 
-    var selectedArticle: AnyObserver<ArticleViewModel>
-
-    // Output
+    //MARK:- Output
+    /// View Model outputs to the View Controller
     var data: Observable<[ArticleViewModel]>
-    
     var title: Observable<String>
-    
     var loading: Observable<Bool>
     
+    // MARK:- Properties
+    var router: UnownedRouter<AppStartUpRoute>
+    private let articleRepository: ArticleRepository
     
-//    let loaded: AnyObserver<Void>
-//    let reload: AnyObserver<Void>
-//    let selectedArticle: AnyObserver<ArticleViewModel>
-//
-//    let data: Observable<[ArticleViewModel]>
-//    let title: Observable<String>
-//    let loading: Observable<Bool>
-    let articleRepository: ArticleRepository
+    private let loadedData: BehaviorRelay<[ArticleViewModel]>
     
-    /// Emits an url of repository page to be shown.
-    let openDetail: Observable<ArticleViewModel>
-    
-    let loadedData = BehaviorRelay<[ArticleViewModel]>(value: [])
-    
-    init(dataRepo: ArticleRepository) {
+    init(router: UnownedRouter<AppStartUpRoute>, dataRepo: ArticleRepository) {
+        self.router = router
         self.articleRepository = dataRepo
+        loadedData = BehaviorRelay<[ArticleViewModel]>(value: [])
+        
         self.title = Observable.just("Top Headlines")
         
         let _loaded = PublishSubject<Void>()
         self.loaded = _loaded.asObserver()
         
-        let _reload = PublishSubject<Void>()
-        self.reload = _reload.asObserver()
         
         let _selectedArticle = PublishSubject<ArticleViewModel>()
-               self.selectedArticle = _selectedArticle.asObserver()
-        
-        self.openDetail = _selectedArticle.asObserver().map {$0}
+        self.selectedArticle = _selectedArticle.asObserver()
         
         let activityIndicator = ActivityIndicator()
         loading = activityIndicator.asObservable()
@@ -71,6 +59,10 @@ class ArticleListViewModel: ArticleListViewModelType, ArticleListViewModelInput,
             self.loadedData.accept(self.loadedData.value + articles)
         })
         
+        let _openDetailWithSelectedModel = PublishSubject<ArticleViewModel>()
+        self.selectedArticle = _openDetailWithSelectedModel.asObserver()
+        
+        _ = _openDetailWithSelectedModel.subscribe(onNext: {print($0.headline)})
         
     }
     

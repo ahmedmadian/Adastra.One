@@ -28,7 +28,6 @@
 		DED7C06C23D7765E00D90075 /* ArticlesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C06B23D7765E00D90075 /* ArticlesRepository.swift */; };
 		DED7C07223D77C1E00D90075 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C07123D77C1E00D90075 /* ArticleListViewController.swift */; };
 		DED7C07523D77C8C00D90075 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C07423D77C8C00D90075 /* ArticleListViewModel.swift */; };
-		DED7C07723D77EAA00D90075 /* ArticleListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C07623D77EAA00D90075 /* ArticleListCoordinator.swift */; };
 		DED7C07D23D7822400D90075 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C07B23D7822400D90075 /* ArticleCell.swift */; };
 		DED7C07E23D7822400D90075 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED7C07C23D7822400D90075 /* ArticleCell.xib */; };
 		DED7C08023D7823F00D90075 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C07F23D7823F00D90075 /* ArticleViewModel.swift */; };
@@ -67,7 +66,6 @@
 		DED7C06B23D7765E00D90075 /* ArticlesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRepository.swift; sourceTree = "<group>"; };
 		DED7C07123D77C1E00D90075 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		DED7C07423D77C8C00D90075 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
-		DED7C07623D77EAA00D90075 /* ArticleListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCoordinator.swift; sourceTree = "<group>"; };
 		DED7C07B23D7822400D90075 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		DED7C07C23D7822400D90075 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		DED7C07F23D7823F00D90075 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 				DED7C07823D781D100D90075 /* ArticleCell */,
 				DED7C07123D77C1E00D90075 /* ArticleListViewController.swift */,
 				DED7C07423D77C8C00D90075 /* ArticleListViewModel.swift */,
-				DED7C07623D77EAA00D90075 /* ArticleListCoordinator.swift */,
 				DED7C09823D8655800D90075 /* ArticleListViewModelProtocols.swift */,
 			);
 			path = ArticleList;
@@ -414,7 +411,6 @@
 				DED7C08423D7AE5B00D90075 /* BaseViewController.swift in Sources */,
 				DED7C08623D7B23A00D90075 /* ActivityIndicator.swift in Sources */,
 				DED7C09923D8655800D90075 /* ArticleListViewModelProtocols.swift in Sources */,
-				DED7C07723D77EAA00D90075 /* ArticleListCoordinator.swift in Sources */,
 				DED7C04223D754D700D90075 /* Storyboards.swift in Sources */,
 				DED7C07223D77C1E00D90075 /* ArticleListViewController.swift in Sources */,
 				DED7C04723D768B800D90075 /* Article.swift in Sources */,

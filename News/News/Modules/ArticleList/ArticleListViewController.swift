@@ -24,33 +24,37 @@ class ArticleListViewController: BaseViewController, BindableType {
     }
     
     func bindViewModel() {
-        rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
-                .take(1)
-                .map { _ in }
-                .bind(to: viewModel.input.loaded)
         
-            viewModel.output.loading.subscribe(onNext: { loading in
-                if loading {
-                    self.showLoader()
-                } else {
-                    self.hideLoader()
-                }
-                }).disposed(by: disposeBag)
-            
-            tableView.rx.modelSelected(ArticleViewModel.self)
-                .bind(to: viewModel.input.selectedArticle)
-                .disposed(by: disposeBag)
+        // View Controller UI actions to the View Model
+        
+        rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
+            .take(1)
+            .map { _ in }
+            .bind(to: viewModel.input.loaded)
+        
+        tableView.rx.modelSelected(ArticleViewModel.self)
+            .bind(to: viewModel.input.selectedArticle)
+            .disposed(by: disposeBag)
+        
+        // View Controller UI actions to the View Model
 
-            
-            viewModel.output.title
-                .bind(to: navigationItem.rx.title)
-                .disposed(by: disposeBag)
-            
-            viewModel.output.data
-                .observeOn(MainScheduler.instance)
-                .bind(to: tableView.rx.items(cellIdentifier: ArticleCell.typeName, cellType: ArticleCell.self)) { item, data, cell in
-                    cell.configCellAppearnce(with: data)
-                }.disposed(by: disposeBag)
+        viewModel.output.loading.subscribe(onNext: { loading in
+            if loading {
+                self.showLoader()
+            } else {
+                self.hideLoader()
+            }
+        }).disposed(by: disposeBag)
+        
+        viewModel.output.title
+            .bind(to: navigationItem.rx.title)
+            .disposed(by: disposeBag)
+        
+        viewModel.output.data
+            .observeOn(MainScheduler.instance)
+            .bind(to: tableView.rx.items(cellIdentifier: ArticleCell.typeName, cellType: ArticleCell.self)) { item, data, cell in
+                cell.configCellAppearnce(with: data)
+        }.disposed(by: disposeBag)
         
     }
     
