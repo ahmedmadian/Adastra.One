@@ -27,7 +27,8 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
             return .push(viewController)
             
         case .detail(let detailedData):
-            let viewModel = ArticleDetailViewModel(router: self.unownedRouter, detailedData: detailedData)
+            let articleRepository = ArticlesDataRepository(remoteDataSource: NewsAPISerivce.shared)
+            let viewModel = ArticleDetailViewModel(router: self.unownedRouter, detailedData: detailedData, dataRepo: articleRepository)
             let viewController: ArticleDetailViewController = Storyboards.main.instantiate()!
             viewController.bind(to: viewModel)
             return .push(viewController)

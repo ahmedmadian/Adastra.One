@@ -41,6 +41,8 @@
 		DED7C09723D8651400D90075 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09623D8651400D90075 /* BindableType.swift */; };
 		DED7C09923D8655800D90075 /* ArticleListViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09823D8655800D90075 /* ArticleListViewModelProtocols.swift */; };
 		DED7C09B23D8784300D90075 /* ArticleDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09A23D8784300D90075 /* ArticleDetailViewModelProtocol.swift */; };
+		DED7C09E23D88A8800D90075 /* ArticleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09C23D88A8800D90075 /* ArticleCollectionCell.swift */; };
+		DED7C09F23D88A8800D90075 /* ArticleCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED7C09D23D88A8800D90075 /* ArticleCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		DED7C09623D8651400D90075 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		DED7C09823D8655800D90075 /* ArticleListViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModelProtocols.swift; sourceTree = "<group>"; };
 		DED7C09A23D8784300D90075 /* ArticleDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModelProtocol.swift; sourceTree = "<group>"; };
+		DED7C09C23D88A8800D90075 /* ArticleCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionCell.swift; sourceTree = "<group>"; };
+		DED7C09D23D88A8800D90075 /* ArticleCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionCell.xib; sourceTree = "<group>"; };
 		ED44616CECC27AE264970E17 /* Pods-News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.debug.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.debug.xcconfig"; sourceTree = "<group>"; };
 		F7BDBC39933487431CB6BEE6 /* Pods_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -271,6 +275,7 @@
 				DED7C08A23D7B77E00D90075 /* ArticleDetailViewController.swift */,
 				DED7C08C23D7B79900D90075 /* ArticleDetailViewModel.swift */,
 				DED7C09A23D8784300D90075 /* ArticleDetailViewModelProtocol.swift */,
+				DED7C0A023D88A8F00D90075 /* ArticleCollectionCell */,
 			);
 			path = ArticleDetail;
 			sourceTree = "<group>";
@@ -290,6 +295,15 @@
 				DED7C09323D85FE900D90075 /* AppStartUpRoute.swift */,
 			);
 			path = Routes;
+			sourceTree = "<group>";
+		};
+		DED7C0A023D88A8F00D90075 /* ArticleCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				DED7C09C23D88A8800D90075 /* ArticleCollectionCell.swift */,
+				DED7C09D23D88A8800D90075 /* ArticleCollectionCell.xib */,
+			);
+			path = ArticleCollectionCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DED7C07E23D7822400D90075 /* ArticleCell.xib in Resources */,
+				DED7C09F23D88A8800D90075 /* ArticleCollectionCell.xib in Resources */,
 				DED7C03423D7420400D90075 /* LaunchScreen.storyboard in Resources */,
 				DED7C03123D7420400D90075 /* Assets.xcassets in Resources */,
 				DED7C02F23D7420200D90075 /* Main.storyboard in Resources */,
@@ -430,6 +445,7 @@
 				DED7C05D23D7704E00D90075 /* BaseRemoteService.swift in Sources */,
 				DED7C06C23D7765E00D90075 /* ArticlesRepository.swift in Sources */,
 				DED7C03D23D7530E00D90075 /* BaseCoordinator.swift in Sources */,
+				DED7C09E23D88A8800D90075 /* ArticleCollectionCell.swift in Sources */,
 				DED7C08D23D7B79900D90075 /* ArticleDetailViewModel.swift in Sources */,
 				DED7C05423D76D8D00D90075 /* Endpointable.swift in Sources */,
 				DED7C02823D7420200D90075 /* AppDelegate.swift in Sources */,

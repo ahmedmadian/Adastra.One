@@ -11,12 +11,13 @@ import RxSwift
 import RxCocoa
 
 protocol ArticleDetailViewModelInput {
-     //var loaded: PublishSubject<Void> {get}
+     var loaded: PublishSubject<Void> {get}
 }
 
 protocol ArticleDetailViewModelOutput {
     var articleDetail: Observable<ArticleViewModel> {get}
     //var imageUrl: Observable<String> {get}
+    var collectionData: Observable<[ArticleViewModel]> {get}
 }
 
 protocol ArticleDetailViewModelType {

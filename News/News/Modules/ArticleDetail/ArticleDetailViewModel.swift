@@ -13,22 +13,40 @@ import RxCocoa
 
 class ArticleDetailViewModel: ArticleDetailViewModelType, ArticleDetailViewModelInput, ArticleDetailViewModelOutput {
     
+    
+    
     //Input
-    //var loaded: PublishSubject<Void>
+    var loaded: PublishSubject<Void>
     
     //Output
     var articleDetail: Observable<ArticleViewModel>
-    
+    var collectionData: Observable<[ArticleViewModel]>
     
     private let data: BehaviorRelay<ArticleViewModel>
+    private let loadedData: BehaviorRelay<[ArticleViewModel]>
+    private let articleRepository: ArticleRepository
     
-    init(router: UnownedRouter<AppStartUpRoute>, detailedData: ArticleViewModel) {
+    init(router: UnownedRouter<AppStartUpRoute>, detailedData: ArticleViewModel, dataRepo: ArticleRepository) {
+        self.articleRepository = dataRepo
         self.data =  BehaviorRelay<ArticleViewModel>(value: detailedData)
         
-        //let _loaded = PublishSubject<Void>()
-        //self.loaded = _loaded.asObserver()
+        let _loaded = PublishSubject<Void>()
+        self.loaded = _loaded.asObserver()
         
         self.articleDetail = data.map {$0}
+        
+        loadedData = BehaviorRelay<[ArticleViewModel]>(value: [])
+        
+        collectionData = loadedData.asObservable()
+        
+        let loadNext = _loaded.flatMapLatest { _ -> Observable<[ArticleViewModel]> in
+            return self.articleRepository.fetchTopHeadlines()
+                .map{ $0.map { ArticleViewModel(article: $0) } }
+        }
+        
+       _ = loadNext.subscribe(onNext: { (articles) in
+           self.loadedData.accept(self.loadedData.value + articles)
+       })
     }
     
     
