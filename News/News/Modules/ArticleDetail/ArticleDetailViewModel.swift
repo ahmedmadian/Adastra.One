@@ -12,11 +12,14 @@ import XCoordinator
 import RxCocoa
 
 class ArticleDetailViewModel: ArticleDetailViewModelType, ArticleDetailViewModelInput, ArticleDetailViewModelOutput {
+   
+    
     
     
     
     //Input
     var loaded: PublishSubject<Void>
+    var exit: PublishSubject<Void>
     
     //Output
     var articleDetail: Observable<ArticleViewModel>
@@ -39,6 +42,8 @@ class ArticleDetailViewModel: ArticleDetailViewModelType, ArticleDetailViewModel
         
         collectionData = loadedData.asObservable()
         
+        exit = PublishSubject<Void>().asObserver()
+        
         let loadNext = _loaded.flatMapLatest { _ -> Observable<[ArticleViewModel]> in
             return self.articleRepository.fetchTopHeadlines()
                 .map{ $0.map { ArticleViewModel(article: $0) } }
@@ -47,6 +52,8 @@ class ArticleDetailViewModel: ArticleDetailViewModelType, ArticleDetailViewModel
        _ = loadNext.subscribe(onNext: { (articles) in
            self.loadedData.accept(self.loadedData.value + articles)
        })
+        
+        _ = exit.subscribe(onNext: {router.trigger(.exit)})
     }
     
     

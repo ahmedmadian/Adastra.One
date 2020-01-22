@@ -31,7 +31,10 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
             let viewModel = ArticleDetailViewModel(router: self.unownedRouter, detailedData: detailedData, dataRepo: articleRepository)
             let viewController: ArticleDetailViewController = Storyboards.main.instantiate()!
             viewController.bind(to: viewModel)
-            return .push(viewController)
+            return .presentFullScreen(viewController)
+            
+        case .exit:
+            return .dismissToRoot()
         }
     }
     

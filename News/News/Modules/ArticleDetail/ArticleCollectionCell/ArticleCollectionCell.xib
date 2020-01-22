@@ -25,22 +25,22 @@
                                     <constraint firstAttribute="height" constant="220" id="3eA-eX-npb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dtz-dF-xd4">
-                                <rect key="frame" x="0.0" y="230" width="135" height="70"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dtz-dF-xd4">
+                                <rect key="frame" x="4" y="230" width="127" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dtz-dF-xd4" secondAttribute="trailing" id="BNh-sV-RLq"/>
+                            <constraint firstAttribute="trailing" secondItem="dtz-dF-xd4" secondAttribute="trailing" constant="4" id="BNh-sV-RLq"/>
                             <constraint firstItem="YWX-01-Soe" firstAttribute="leading" secondItem="JZV-1O-Gte" secondAttribute="leading" id="Os4-2c-7RM"/>
                             <constraint firstAttribute="trailing" secondItem="YWX-01-Soe" secondAttribute="trailing" id="TId-GU-prw"/>
                             <constraint firstItem="dtz-dF-xd4" firstAttribute="top" secondItem="YWX-01-Soe" secondAttribute="bottom" constant="10" id="gWx-m8-asA"/>
                             <constraint firstItem="YWX-01-Soe" firstAttribute="top" secondItem="JZV-1O-Gte" secondAttribute="top" id="kjV-Wm-jRp"/>
-                            <constraint firstAttribute="bottom" secondItem="dtz-dF-xd4" secondAttribute="bottom" id="pp3-up-6fR"/>
-                            <constraint firstItem="dtz-dF-xd4" firstAttribute="leading" secondItem="JZV-1O-Gte" secondAttribute="leading" id="xaz-0A-YWl"/>
+                            <constraint firstAttribute="bottom" secondItem="dtz-dF-xd4" secondAttribute="bottom" constant="4" id="pp3-up-6fR"/>
+                            <constraint firstItem="dtz-dF-xd4" firstAttribute="leading" secondItem="JZV-1O-Gte" secondAttribute="leading" constant="4" id="xaz-0A-YWl"/>
                         </constraints>
                     </view>
                 </subviews>

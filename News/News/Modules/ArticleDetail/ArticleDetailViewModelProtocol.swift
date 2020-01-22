@@ -12,6 +12,7 @@ import RxCocoa
 
 protocol ArticleDetailViewModelInput {
      var loaded: PublishSubject<Void> {get}
+    var exit: PublishSubject<Void> {get}
 }
 
 protocol ArticleDetailViewModelOutput {

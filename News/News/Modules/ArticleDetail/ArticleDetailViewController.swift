@@ -20,7 +20,7 @@ class ArticleDetailViewController: UIViewController, BindableType {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var exitButton: UIButton!
     
     
     private let disposeBag = DisposeBag()
@@ -39,6 +39,7 @@ class ArticleDetailViewController: UIViewController, BindableType {
         .map { _ in }
         .bind(to: viewModel.input.loaded)
         
+        exitButton.rx.tap.bind(to: viewModel.input.exit).disposed(by: disposeBag)
         
         viewModel.output.articleDetail.subscribe(onNext: { (article) in
             self.fillDetails(with: article)
