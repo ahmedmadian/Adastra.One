@@ -13,17 +13,12 @@ import RxSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    private var appCoordinator: AppCoordinator!
-    private let disposeBag = DisposeBag()
+    private let router = AppStartUpCoordinator().strongRouter
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-
-        appCoordinator = AppCoordinator(window: window!)
-        appCoordinator.start()
-            .subscribe()
-            .disposed(by: disposeBag)
+        router.setRoot(for: window!)
         
         return true
     }

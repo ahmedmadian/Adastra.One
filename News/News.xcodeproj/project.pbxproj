@@ -13,7 +13,6 @@
 		DED7C03123D7420400D90075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED7C03023D7420400D90075 /* Assets.xcassets */; };
 		DED7C03423D7420400D90075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED7C03223D7420400D90075 /* LaunchScreen.storyboard */; };
 		DED7C03D23D7530E00D90075 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C03C23D7530E00D90075 /* BaseCoordinator.swift */; };
-		DED7C04023D7535300D90075 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C03F23D7535300D90075 /* AppCoordinator.swift */; };
 		DED7C04223D754D700D90075 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C04123D754D700D90075 /* Storyboards.swift */; };
 		DED7C04723D768B800D90075 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C04623D768B800D90075 /* Article.swift */; };
 		DED7C04923D768FE00D90075 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C04823D768FE00D90075 /* Source.swift */; };
@@ -36,6 +35,12 @@
 		DED7C08223D79A5D00D90075 /* UIView+typeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C08123D79A5D00D90075 /* UIView+typeName.swift */; };
 		DED7C08423D7AE5B00D90075 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C08323D7AE5B00D90075 /* BaseViewController.swift */; };
 		DED7C08623D7B23A00D90075 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C08523D7B23A00D90075 /* ActivityIndicator.swift */; };
+		DED7C08B23D7B77E00D90075 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C08A23D7B77E00D90075 /* ArticleDetailViewController.swift */; };
+		DED7C08D23D7B79900D90075 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C08C23D7B79900D90075 /* ArticleDetailViewModel.swift */; };
+		DED7C09223D85F9C00D90075 /* AppStartUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09123D85F9C00D90075 /* AppStartUpCoordinator.swift */; };
+		DED7C09423D85FE900D90075 /* AppStartUpRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09323D85FE900D90075 /* AppStartUpRoute.swift */; };
+		DED7C09723D8651400D90075 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09623D8651400D90075 /* BindableType.swift */; };
+		DED7C09923D8655800D90075 /* ArticleListViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09823D8655800D90075 /* ArticleListViewModelProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +52,6 @@
 		DED7C03323D7420400D90075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DED7C03523D7420400D90075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DED7C03C23D7530E00D90075 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		DED7C03F23D7535300D90075 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DED7C04123D754D700D90075 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		DED7C04623D768B800D90075 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		DED7C04823D768FE00D90075 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
@@ -70,6 +74,12 @@
 		DED7C08123D79A5D00D90075 /* UIView+typeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+typeName.swift"; sourceTree = "<group>"; };
 		DED7C08323D7AE5B00D90075 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DED7C08523D7B23A00D90075 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		DED7C08A23D7B77E00D90075 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
+		DED7C08C23D7B79900D90075 /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
+		DED7C09123D85F9C00D90075 /* AppStartUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartUpCoordinator.swift; sourceTree = "<group>"; };
+		DED7C09323D85FE900D90075 /* AppStartUpRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartUpRoute.swift; sourceTree = "<group>"; };
+		DED7C09623D8651400D90075 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
+		DED7C09823D8655800D90075 /* ArticleListViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModelProtocols.swift; sourceTree = "<group>"; };
 		ED44616CECC27AE264970E17 /* Pods-News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.debug.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.debug.xcconfig"; sourceTree = "<group>"; };
 		F7BDBC39933487431CB6BEE6 /* Pods_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,6 +134,7 @@
 		DED7C02623D7420200D90075 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				DED7C09023D85F8600D90075 /* Coordinators */,
 				DED7C06D23D77BDF00D90075 /* Modules */,
 				DED7C04C23D76BA100D90075 /* Persistence */,
 				DED7C04523D7689E00D90075 /* Model */,
@@ -147,6 +158,7 @@
 				DED7C08123D79A5D00D90075 /* UIView+typeName.swift */,
 				DED7C08323D7AE5B00D90075 /* BaseViewController.swift */,
 				DED7C08523D7B23A00D90075 /* ActivityIndicator.swift */,
+				DED7C09623D8651400D90075 /* BindableType.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -155,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				DED7C02723D7420200D90075 /* AppDelegate.swift */,
-				DED7C03F23D7535300D90075 /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -227,6 +238,7 @@
 		DED7C06D23D77BDF00D90075 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DED7C08723D7B72900D90075 /* ArticleDetail */,
 				DED7C07023D77C0400D90075 /* ArticleList */,
 			);
 			path = Modules;
@@ -239,6 +251,7 @@
 				DED7C07123D77C1E00D90075 /* ArticleListViewController.swift */,
 				DED7C07423D77C8C00D90075 /* ArticleListViewModel.swift */,
 				DED7C07623D77EAA00D90075 /* ArticleListCoordinator.swift */,
+				DED7C09823D8655800D90075 /* ArticleListViewModelProtocols.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -251,6 +264,32 @@
 				DED7C07F23D7823F00D90075 /* ArticleViewModel.swift */,
 			);
 			path = ArticleCell;
+			sourceTree = "<group>";
+		};
+		DED7C08723D7B72900D90075 /* ArticleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DED7C08A23D7B77E00D90075 /* ArticleDetailViewController.swift */,
+				DED7C08C23D7B79900D90075 /* ArticleDetailViewModel.swift */,
+			);
+			path = ArticleDetail;
+			sourceTree = "<group>";
+		};
+		DED7C09023D85F8600D90075 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				DED7C09123D85F9C00D90075 /* AppStartUpCoordinator.swift */,
+				DED7C09523D8603A00D90075 /* Routes */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		DED7C09523D8603A00D90075 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				DED7C09323D85FE900D90075 /* AppStartUpRoute.swift */,
+			);
+			path = Routes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,18 +408,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DED7C04023D7535300D90075 /* AppCoordinator.swift in Sources */,
+				DED7C09423D85FE900D90075 /* AppStartUpRoute.swift in Sources */,
 				DED7C07523D77C8C00D90075 /* ArticleListViewModel.swift in Sources */,
 				DED7C06123D7711000D90075 /* BaseServiceError.swift in Sources */,
 				DED7C08423D7AE5B00D90075 /* BaseViewController.swift in Sources */,
 				DED7C08623D7B23A00D90075 /* ActivityIndicator.swift in Sources */,
+				DED7C09923D8655800D90075 /* ArticleListViewModelProtocols.swift in Sources */,
 				DED7C07723D77EAA00D90075 /* ArticleListCoordinator.swift in Sources */,
 				DED7C04223D754D700D90075 /* Storyboards.swift in Sources */,
 				DED7C07223D77C1E00D90075 /* ArticleListViewController.swift in Sources */,
 				DED7C04723D768B800D90075 /* Article.swift in Sources */,
+				DED7C08B23D7B77E00D90075 /* ArticleDetailViewController.swift in Sources */,
 				DED7C08023D7823F00D90075 /* ArticleViewModel.swift in Sources */,
 				DED7C06523D7719B00D90075 /* Error+Code.swift in Sources */,
 				DED7C05223D76D4A00D90075 /* HTTPMethod+HTTPSchema.swift in Sources */,
+				DED7C09223D85F9C00D90075 /* AppStartUpCoordinator.swift in Sources */,
 				DED7C04923D768FE00D90075 /* Source.swift in Sources */,
 				DED7C06823D7737F00D90075 /* NewsAPIService.swift in Sources */,
 				DED7C07D23D7822400D90075 /* ArticleCell.swift in Sources */,
@@ -388,8 +430,10 @@
 				DED7C05D23D7704E00D90075 /* BaseRemoteService.swift in Sources */,
 				DED7C06C23D7765E00D90075 /* ArticlesRepository.swift in Sources */,
 				DED7C03D23D7530E00D90075 /* BaseCoordinator.swift in Sources */,
+				DED7C08D23D7B79900D90075 /* ArticleDetailViewModel.swift in Sources */,
 				DED7C05423D76D8D00D90075 /* Endpointable.swift in Sources */,
 				DED7C02823D7420200D90075 /* AppDelegate.swift in Sources */,
+				DED7C09723D8651400D90075 /* BindableType.swift in Sources */,
 				DED7C05923D76DFD00D90075 /* NewsAPIConstants.swift in Sources */,
 				DED7C05B23D76E5300D90075 /* NewsAPIEndpoints.swift in Sources */,
 				DED7C08223D79A5D00D90075 /* UIView+typeName.swift in Sources */,

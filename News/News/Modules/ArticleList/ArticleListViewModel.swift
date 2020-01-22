@@ -10,28 +10,51 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class ArticleListViewModel {
+class ArticleListViewModel: ArticleListViewModelType, ArticleListViewModelInput, ArticleListViewModelOutput{
+   
+    // Input
+    var loaded: AnyObserver<Void>
     
-    let loaded: AnyObserver<Void>
-    let reload: AnyObserver<Void>
+    var reload: AnyObserver<Void>
+
+    var selectedArticle: AnyObserver<ArticleViewModel>
+
+    // Output
+    var data: Observable<[ArticleViewModel]>
     
-    let data: Observable<[ArticleViewModel]>
-    let title: Observable<String>
-    let loading: Observable<Bool>
+    var title: Observable<String>
+    
+    var loading: Observable<Bool>
+    
+    
+//    let loaded: AnyObserver<Void>
+//    let reload: AnyObserver<Void>
+//    let selectedArticle: AnyObserver<ArticleViewModel>
+//
+//    let data: Observable<[ArticleViewModel]>
+//    let title: Observable<String>
+//    let loading: Observable<Bool>
     let articleRepository: ArticleRepository
+    
+    /// Emits an url of repository page to be shown.
+    let openDetail: Observable<ArticleViewModel>
     
     let loadedData = BehaviorRelay<[ArticleViewModel]>(value: [])
     
     init(dataRepo: ArticleRepository) {
         self.articleRepository = dataRepo
         self.title = Observable.just("Top Headlines")
-        //self.data = articleRepository.
         
         let _loaded = PublishSubject<Void>()
         self.loaded = _loaded.asObserver()
         
         let _reload = PublishSubject<Void>()
         self.reload = _reload.asObserver()
+        
+        let _selectedArticle = PublishSubject<ArticleViewModel>()
+               self.selectedArticle = _selectedArticle.asObserver()
+        
+        self.openDetail = _selectedArticle.asObserver().map {$0}
         
         let activityIndicator = ActivityIndicator()
         loading = activityIndicator.asObservable()

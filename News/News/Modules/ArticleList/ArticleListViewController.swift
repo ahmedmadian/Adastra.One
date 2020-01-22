@@ -10,48 +10,48 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ArticleListViewController: BaseViewController {
-
+class ArticleListViewController: BaseViewController, BindableType {
+    
     //MARK:- IBOutlet
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: ArticleListViewModel!
+    var viewModel: ArticleListViewModelType!
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.showLoader()
         registerCells()
-        setupBindings()
     }
     
-    private func setupBindings() {
-        
+    func bindViewModel() {
         rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
-            .take(1)
-            .map { _ in }
-            .bind(to: viewModel.loaded)
-    
-        viewModel.loading.subscribe(onNext: { loading in
-            if loading {
-                self.showLoader()
-            } else {
-                self.hideLoader()
-            }
-            }).disposed(by: disposeBag)
+                .take(1)
+                .map { _ in }
+                .bind(to: viewModel.input.loaded)
         
-        viewModel.title
-            .bind(to: navigationItem.rx.title)
-            .disposed(by: disposeBag)
+            viewModel.output.loading.subscribe(onNext: { loading in
+                if loading {
+                    self.showLoader()
+                } else {
+                    self.hideLoader()
+                }
+                }).disposed(by: disposeBag)
+            
+            tableView.rx.modelSelected(ArticleViewModel.self)
+                .bind(to: viewModel.input.selectedArticle)
+                .disposed(by: disposeBag)
+
+            
+            viewModel.output.title
+                .bind(to: navigationItem.rx.title)
+                .disposed(by: disposeBag)
+            
+            viewModel.output.data
+                .observeOn(MainScheduler.instance)
+                .bind(to: tableView.rx.items(cellIdentifier: ArticleCell.typeName, cellType: ArticleCell.self)) { item, data, cell in
+                    cell.configCellAppearnce(with: data)
+                }.disposed(by: disposeBag)
         
-        viewModel.data
-            .observeOn(MainScheduler.instance)
-            //.do(onNext: { [weak self] _ in self?.hideLoader() })
-            .bind(to: tableView.rx.items(cellIdentifier: ArticleCell.typeName, cellType: ArticleCell.self)) { item, data, cell in
-                cell.configCellAppearnce(with: data)
-            }.disposed(by: disposeBag)
-
-
     }
     
     private func registerCells() {

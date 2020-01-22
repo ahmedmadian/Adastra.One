@@ -9,12 +9,16 @@ PODS:
   - SDWebImage (5.5.1):
     - SDWebImage/Core (= 5.5.1)
   - SDWebImage/Core (5.5.1)
+  - XCoordinator (2.0.6):
+    - XCoordinator/Core (= 2.0.6)
+  - XCoordinator/Core (2.0.6)
 
 DEPENDENCIES:
   - Alamofire
   - RxCocoa
   - RxSwift
   - SDWebImage
+  - XCoordinator
 
 SPEC REPOS:
   trunk:
@@ -23,6 +27,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SDWebImage
+    - XCoordinator
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -30,7 +35,8 @@ SPEC CHECKSUMS:
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SDWebImage: 1245d058b7b8f59adef7a6da6bbafd4f1ab67041
+  XCoordinator: 67772bf463acec002a920ab5eb04f46835dcf123
 
-PODFILE CHECKSUM: a71ab0fc8c20470090f12560dd66cdc1c1b8776e
+PODFILE CHECKSUM: 63c0d6cc09143d2b4beebed4387fdd560e626ba2
 
 COCOAPODS: 1.8.4

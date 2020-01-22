@@ -6,6 +6,7 @@ def swiftPods
   pod 'RxCocoa'
   pod 'Alamofire'
   pod 'SDWebImage'
+  pod 'XCoordinator'
 end
 
 target 'News' do
