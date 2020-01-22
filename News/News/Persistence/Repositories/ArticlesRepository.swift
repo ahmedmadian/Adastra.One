@@ -11,9 +11,11 @@ import RxSwift
 
 protocol ArticleRepository {
     func fetchTopHeadlines() -> Observable<[Article]>
+    func fetchTopHeadlines(with sourceId: String) -> Observable<[Article]>
 }
 
 class ArticlesDataRepository: ArticleRepository{
+    
     
     //MARK:- Properties
     private let remoteDataSource: NewsAPIServiceable
@@ -26,7 +28,14 @@ class ArticlesDataRepository: ArticleRepository{
     //MARK:- Methods
     func fetchTopHeadlines() -> Observable<[Article]> {
         let endPoint: NewsAPIEndPoints = .topHeadlines
-        return self.remoteDataSource.fetchArticles(with: endPoint)
+        return self.remoteDataSource.fetchArticles(with: endPoint, with: nil)
     }
+    
+    func fetchTopHeadlines(with sourceId: String) -> Observable<[Article]> {
+        let endPoint: NewsAPIEndPoints = .topHeadlines
+        let params = ["sources": sourceId]
+        return self.remoteDataSource.fetchArticles(with: endPoint, with: params)
+    }
+    
        
 }

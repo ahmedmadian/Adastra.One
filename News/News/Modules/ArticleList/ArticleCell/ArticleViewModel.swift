@@ -16,6 +16,7 @@ class ArticleViewModel {
     var articleDescription: String
     var url: String
     var sourceName: String
+    var sourceId: String?
     
     init(article: Article) {
         self.posterImageURL = article.urlToImage ?? ""
@@ -25,5 +26,6 @@ class ArticleViewModel {
         self.articleDescription = article.articleDescription ?? ""
         self.url = article.url
         self.sourceName = article.source?.name ?? ""
+        self.sourceId = article.source?.id
     }
 }

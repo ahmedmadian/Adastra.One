@@ -9,11 +9,11 @@
 import Alamofire
 
 protocol BaseRemoteService {
-    func execute<Model:Codable>(endPoint: Endpointable, completionHandler: @escaping (Swift.Result<Model, Error>) -> Void )
+    func execute<Model:Codable>(endPoint: Endpointable, parameters: [String : Any]?, completionHandler: @escaping (Swift.Result<Model, Error>) -> Void )
 }
 
 extension BaseRemoteService {
-    func execute<Model:Codable>(endPoint: Endpointable, completionHandler: @escaping (Swift.Result<Model, Error>) -> Void ) {
+    func execute<Model:Codable>(endPoint: Endpointable, parameters: [String : Any]? = [:], completionHandler: @escaping (Swift.Result<Model, Error>) -> Void ) {
         
         var generalParameters: [String:Any] = [
             NewsAPIParameterKeys.PageSize: "50",
@@ -21,6 +21,10 @@ extension BaseRemoteService {
         ]
         
         generalParameters.merge(with: endPoint.parameters)
+        if let params = parameters {
+            generalParameters.merge(with: params)
+        }
+        
         
         var generalHeaders = [String: String]()
         generalHeaders.merge(with: endPoint.headers)

@@ -45,7 +45,7 @@ class ArticleDetailViewModel: ArticleDetailViewModelType, ArticleDetailViewModel
         exit = PublishSubject<Void>().asObserver()
         
         let loadNext = _loaded.flatMapLatest { _ -> Observable<[ArticleViewModel]> in
-            return self.articleRepository.fetchTopHeadlines()
+            return self.articleRepository.fetchTopHeadlines(with: self.data.value.sourceId!)
                 .map{ $0.map { ArticleViewModel(article: $0) } }
         }
         

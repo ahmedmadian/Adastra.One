@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol NewsAPIServiceable: BaseRemoteService {
-    func fetchArticles(with endPoint: Endpointable) -> Observable<[Article]>
+    func fetchArticles(with endPoint: Endpointable, with parameters: [String: Any]?) -> Observable<[Article]>
 }
 
 class NewsAPISerivce: NewsAPIServiceable {
@@ -22,9 +22,9 @@ class NewsAPISerivce: NewsAPIServiceable {
     private init() {}
     
     //MARK:- Remote Data Source
-    func fetchArticles(with endPoint: Endpointable) -> Observable<[Article]> {
+    func fetchArticles(with endPoint: Endpointable, with parameters: [String: Any]?) -> Observable<[Article]> {
         return Observable.create { observer in
-            self.execute(endPoint: endPoint) { (result: Result<ArticleResponseWrapper, Error>) in
+            self.execute(endPoint: endPoint, parameters: parameters) { (result: Result<ArticleResponseWrapper, Error>) in
                 switch result {
                 case .success(let response):
                     observer.on(.next(response.articles))
