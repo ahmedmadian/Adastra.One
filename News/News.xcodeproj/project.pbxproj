@@ -40,6 +40,7 @@
 		DED7C09423D85FE900D90075 /* AppStartUpRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09323D85FE900D90075 /* AppStartUpRoute.swift */; };
 		DED7C09723D8651400D90075 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09623D8651400D90075 /* BindableType.swift */; };
 		DED7C09923D8655800D90075 /* ArticleListViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09823D8655800D90075 /* ArticleListViewModelProtocols.swift */; };
+		DED7C09B23D8784300D90075 /* ArticleDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C09A23D8784300D90075 /* ArticleDetailViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		DED7C09323D85FE900D90075 /* AppStartUpRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartUpRoute.swift; sourceTree = "<group>"; };
 		DED7C09623D8651400D90075 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		DED7C09823D8655800D90075 /* ArticleListViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModelProtocols.swift; sourceTree = "<group>"; };
+		DED7C09A23D8784300D90075 /* ArticleDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		ED44616CECC27AE264970E17 /* Pods-News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.debug.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.debug.xcconfig"; sourceTree = "<group>"; };
 		F7BDBC39933487431CB6BEE6 /* Pods_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -268,6 +270,7 @@
 			children = (
 				DED7C08A23D7B77E00D90075 /* ArticleDetailViewController.swift */,
 				DED7C08C23D7B79900D90075 /* ArticleDetailViewModel.swift */,
+				DED7C09A23D8784300D90075 /* ArticleDetailViewModelProtocol.swift */,
 			);
 			path = ArticleDetail;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				DED7C06123D7711000D90075 /* BaseServiceError.swift in Sources */,
 				DED7C08423D7AE5B00D90075 /* BaseViewController.swift in Sources */,
 				DED7C08623D7B23A00D90075 /* ActivityIndicator.swift in Sources */,
+				DED7C09B23D8784300D90075 /* ArticleDetailViewModelProtocol.swift in Sources */,
 				DED7C09923D8655800D90075 /* ArticleListViewModelProtocols.swift in Sources */,
 				DED7C04223D754D700D90075 /* Storyboards.swift in Sources */,
 				DED7C07223D77C1E00D90075 /* ArticleListViewController.swift in Sources */,

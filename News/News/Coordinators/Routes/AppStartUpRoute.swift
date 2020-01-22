@@ -13,5 +13,5 @@ import RxCocoa
 
 enum AppStartUpRoute: Route {
     case articles
-    case detail
+    case detail(detailedData: ArticleViewModel)
 }

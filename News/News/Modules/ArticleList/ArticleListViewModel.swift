@@ -59,10 +59,7 @@ class ArticleListViewModel: ArticleListViewModelType, ArticleListViewModelInput,
             self.loadedData.accept(self.loadedData.value + articles)
         })
         
-        let _openDetailWithSelectedModel = PublishSubject<ArticleViewModel>()
-        self.selectedArticle = _openDetailWithSelectedModel.asObserver()
-        
-        _ = _openDetailWithSelectedModel.subscribe(onNext: {print($0.headline)})
+        _ = selectedArticle.subscribe(onNext: {router.trigger(.detail(detailedData: $0))})
         
     }
     

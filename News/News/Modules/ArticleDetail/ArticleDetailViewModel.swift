@@ -8,13 +8,27 @@
 
 import Foundation
 import RxSwift
+import XCoordinator
+import RxCocoa
 
-class ArticleDetailViewModel {
+class ArticleDetailViewModel: ArticleDetailViewModelType, ArticleDetailViewModelInput, ArticleDetailViewModelOutput {
     
-    private let data: Observable<ArticleViewModel>
+    //Input
+    //var loaded: PublishSubject<Void>
     
-    init(data: Observable<ArticleViewModel>) {
-        self.data = data
+    //Output
+    var articleDetail: Observable<ArticleViewModel>
+    
+    
+    private let data: BehaviorRelay<ArticleViewModel>
+    
+    init(router: UnownedRouter<AppStartUpRoute>, detailedData: ArticleViewModel) {
+        self.data =  BehaviorRelay<ArticleViewModel>(value: detailedData)
+        
+        //let _loaded = PublishSubject<Void>()
+        //self.loaded = _loaded.asObserver()
+        
+        self.articleDetail = data.map {$0}
     }
     
     

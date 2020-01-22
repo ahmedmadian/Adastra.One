@@ -26,8 +26,10 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
             
             return .push(viewController)
             
-        case .detail:
+        case .detail(let detailedData):
+            let viewModel = ArticleDetailViewModel(router: self.unownedRouter, detailedData: detailedData)
             let viewController: ArticleDetailViewController = Storyboards.main.instantiate()!
+            viewController.bind(to: viewModel)
             return .push(viewController)
         }
     }
