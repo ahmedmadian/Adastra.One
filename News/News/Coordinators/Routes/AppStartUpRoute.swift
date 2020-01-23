@@ -15,4 +15,5 @@ enum AppStartUpRoute: Route {
     case articles
     case detail(detailedData: ArticleViewModel)
     case exit
+    case safari(url: URL)
 }

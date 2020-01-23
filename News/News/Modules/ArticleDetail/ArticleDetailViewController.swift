@@ -21,6 +21,7 @@ class ArticleDetailViewController: UIViewController, BindableType {
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var exitButton: UIButton!
+    @IBOutlet weak var safariButton: UIBarButtonItem!
     
     
     private let disposeBag = DisposeBag()
@@ -41,6 +42,15 @@ class ArticleDetailViewController: UIViewController, BindableType {
         
         exitButton.rx.tap.bind(to: viewModel.input.exit).disposed(by: disposeBag)
         
+        safariButton.rx.tap
+            .bind(to: viewModel.input.openSafari)
+            .disposed(by: disposeBag)
+        
+        collectionView.rx.modelSelected(ArticleViewModel.self)
+            .bind(to: viewModel.output.articleDetail)
+        .disposed(by: disposeBag)
+        
+        
         viewModel.output.articleDetail.subscribe(onNext: { (article) in
             self.fillDetails(with: article)
         }).disposed(by: disposeBag)
@@ -56,7 +66,7 @@ class ArticleDetailViewController: UIViewController, BindableType {
     private func fillDetails(with viewModel: ArticleViewModel) {
         articleImage.sd_setImage(with: URL(string: viewModel.posterImageURL), placeholderImage: nil)
         headlineLabel.text = viewModel.headline
-        authorLabel.text = viewModel.authorName
+        authorLabel.text = "by: \(viewModel.authorName)"
         descriptionLabel.text = viewModel.articleDescription
         sourceLabel.text = "More from '\(viewModel.sourceName)'"
     }

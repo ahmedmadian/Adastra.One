@@ -11,13 +11,13 @@ import RxSwift
 import RxCocoa
 
 protocol ArticleDetailViewModelInput {
-     var loaded: PublishSubject<Void> {get}
-    var exit: PublishSubject<Void> {get}
+    var loaded: PublishSubject<Void> { get }
+    var exit: PublishSubject<Void> { get }
+    var openSafari: PublishSubject<Void> { get }
 }
 
 protocol ArticleDetailViewModelOutput {
-    var articleDetail: Observable<ArticleViewModel> {get}
-    //var imageUrl: Observable<String> {get}
+    var articleDetail: BehaviorRelay<ArticleViewModel> {get}
     var collectionData: Observable<[ArticleViewModel]> {get}
 }
 

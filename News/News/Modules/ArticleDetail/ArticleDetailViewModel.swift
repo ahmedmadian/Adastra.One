@@ -12,17 +12,14 @@ import XCoordinator
 import RxCocoa
 
 class ArticleDetailViewModel: ArticleDetailViewModelType, ArticleDetailViewModelInput, ArticleDetailViewModelOutput {
-   
-    
-    
-    
     
     //Input
     var loaded: PublishSubject<Void>
     var exit: PublishSubject<Void>
+    var openSafari: PublishSubject<Void>
     
     //Output
-    var articleDetail: Observable<ArticleViewModel>
+    var articleDetail: BehaviorRelay<ArticleViewModel>
     var collectionData: Observable<[ArticleViewModel]>
     
     private let data: BehaviorRelay<ArticleViewModel>
@@ -36,13 +33,15 @@ class ArticleDetailViewModel: ArticleDetailViewModelType, ArticleDetailViewModel
         let _loaded = PublishSubject<Void>()
         self.loaded = _loaded.asObserver()
         
-        self.articleDetail = data.map {$0}
+        self.articleDetail = data
         
         loadedData = BehaviorRelay<[ArticleViewModel]>(value: [])
         
         collectionData = loadedData.asObservable()
         
         exit = PublishSubject<Void>().asObserver()
+        
+        openSafari = PublishSubject<Void>().asObserver()
         
         let loadNext = _loaded.flatMapLatest { _ -> Observable<[ArticleViewModel]> in
             return self.articleRepository.fetchTopHeadlines(with: self.data.value.sourceId!)
@@ -54,6 +53,12 @@ class ArticleDetailViewModel: ArticleDetailViewModelType, ArticleDetailViewModel
        })
         
         _ = exit.subscribe(onNext: {router.trigger(.exit)})
+        
+        _ = openSafari.subscribe(onNext: {
+            if let url = URL(string: self.data.value.url) {
+                router.trigger(.safari(url: url))
+            }
+        })
     }
     
     
