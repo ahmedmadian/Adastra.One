@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F721322FC11639D61E9C828 /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BDBC39933487431CB6BEE6 /* Pods_News.framework */; };
+		DE50903423D9A9530091BC93 /* Animation+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50903323D9A9530091BC93 /* Animation+Fade.swift */; };
 		DED7C02823D7420200D90075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C02723D7420200D90075 /* AppDelegate.swift */; };
 		DED7C02F23D7420200D90075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED7C02D23D7420200D90075 /* Main.storyboard */; };
 		DED7C03123D7420400D90075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED7C03023D7420400D90075 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		949A561C64BEB6225F4CDDFB /* Pods-News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.release.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.release.xcconfig"; sourceTree = "<group>"; };
+		DE50903323D9A9530091BC93 /* Animation+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Fade.swift"; sourceTree = "<group>"; };
 		DED7C02423D7420200D90075 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED7C02723D7420200D90075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DED7C02E23D7420200D90075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 				949A561C64BEB6225F4CDDFB /* Pods-News.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DE50903223D9A9470091BC93 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				DE50903323D9A9530091BC93 /* Animation+Fade.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		DED7C01B23D7420200D90075 = {
@@ -285,6 +295,7 @@
 		DED7C09023D85F8600D90075 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				DE50903223D9A9470091BC93 /* Animation */,
 				DED7C0A223D89AE800D90075 /* Extension */,
 				DED7C09123D85F9C00D90075 /* AppStartUpCoordinator.swift */,
 				DED7C09523D8603A00D90075 /* Routes */,
@@ -444,6 +455,7 @@
 				DED7C09923D8655800D90075 /* ArticleListViewModelProtocols.swift in Sources */,
 				DED7C04223D754D700D90075 /* Storyboards.swift in Sources */,
 				DED7C07223D77C1E00D90075 /* ArticleListViewController.swift in Sources */,
+				DE50903423D9A9530091BC93 /* Animation+Fade.swift in Sources */,
 				DED7C04723D768B800D90075 /* Article.swift in Sources */,
 				DED7C08B23D7B77E00D90075 /* ArticleDetailViewController.swift in Sources */,
 				DED7C08023D7823F00D90075 /* ArticleViewModel.swift in Sources */,

@@ -14,6 +14,7 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
     
     init() {
         super.init(initialRoute: .articles)
+        Config(navigationController: self.rootViewController)
     }
     
     override func prepareTransition(for route: AppStartUpRoute) -> NavigationTransition {
@@ -32,7 +33,7 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
             let viewModel = ArticleDetailViewModel(router: self.unownedRouter, detailedData: detailedData, dataRepo: articleRepository)
             let viewController: ArticleDetailViewController = Storyboards.main.instantiate()!
             viewController.bind(to: viewModel)
-            return .presentFullScreen(viewController)
+            return .presentFullScreen(viewController, animation: .fade)
             
         case .exit:
             return .dismissToRoot()
@@ -42,4 +43,8 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
         }
     }
     
+    private func Config(navigationController: UINavigationController) {
+        navigationController.navigationBar.isTranslucent = true
+        navigationController.navigationBar.prefersLargeTitles = true
+    }
 }

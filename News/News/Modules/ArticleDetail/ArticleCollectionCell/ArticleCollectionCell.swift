@@ -11,13 +11,11 @@ import SDWebImage
 
 class ArticleCollectionCell: UICollectionViewCell {
 
-    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var artilceImage: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
     
     func configCellAppearnce(with viewModel: ArticleViewModel){
         artilceImage.makeRoundedCorners(with: 30)
-        containerView.makeRoundedCorners(with: 20)
         artilceImage.sd_setImage(with: URL(string:viewModel.posterImageURL), placeholderImage: nil)
         headlineLabel.text = viewModel.headline
         animateCell()
