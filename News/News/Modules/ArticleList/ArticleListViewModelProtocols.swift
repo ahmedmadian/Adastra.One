@@ -11,8 +11,7 @@ import RxSwift
 import RxCocoa
 
 protocol ArticleListViewModelInput {
-    var loaded: AnyObserver<Void> {get}
-    //var reload: AnyObserver<Void> {get}
+    var loaded: PublishSubject<Void> {get}
     var selectedArticle: PublishSubject<ArticleViewModel> {get}
 }
 

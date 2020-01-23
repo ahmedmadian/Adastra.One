@@ -20,7 +20,7 @@ class ArticleListViewController: BaseViewController, BindableType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCells()
+        congifTableView()
     }
     
     func bindViewModel() {
@@ -35,6 +35,7 @@ class ArticleListViewController: BaseViewController, BindableType {
         tableView.rx.modelSelected(ArticleViewModel.self)
             .bind(to: viewModel.input.selectedArticle)
             .disposed(by: disposeBag)
+        
         
         // View Controller UI actions to the View Model
 
@@ -58,9 +59,11 @@ class ArticleListViewController: BaseViewController, BindableType {
         
     }
     
-    private func registerCells() {
+    private func congifTableView() {
         let articalNib = UINib(nibName: ArticleCell.typeName, bundle: nil)
         tableView.register(articalNib, forCellReuseIdentifier: ArticleCell.typeName)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 350
     }
 
 }

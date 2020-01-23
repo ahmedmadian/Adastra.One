@@ -15,7 +15,7 @@ class ArticleListViewModel: ArticleListViewModelType, ArticleListViewModelInput,
    
     //MARK:-  Input
     /// View Controller UI actions to the View Model
-    var loaded: AnyObserver<Void>
+    var loaded: PublishSubject<Void>
     var selectedArticle: PublishSubject<ArticleViewModel>
 
     //MARK:- Output
@@ -25,7 +25,7 @@ class ArticleListViewModel: ArticleListViewModelType, ArticleListViewModelInput,
     var loading: Observable<Bool>
     
     // MARK:- Properties
-    var router: UnownedRouter<AppStartUpRoute>
+    private var router: UnownedRouter<AppStartUpRoute>
     private let articleRepository: ArticleRepository
     
     private let loadedData: BehaviorRelay<[ArticleViewModel]>
@@ -37,27 +37,20 @@ class ArticleListViewModel: ArticleListViewModelType, ArticleListViewModelInput,
         
         self.title = Observable.just("Top Headlines")
         
-        let _loaded = PublishSubject<Void>()
-        self.loaded = _loaded.asObserver()
+        self.loaded = PublishSubject<Void>().asObserver()
         
-        
-        let _selectedArticle = PublishSubject<ArticleViewModel>()
-        self.selectedArticle = _selectedArticle.asObserver()
+        self.selectedArticle = PublishSubject<ArticleViewModel>().asObserver()
         
         let activityIndicator = ActivityIndicator()
         loading = activityIndicator.asObservable()
         
         data = loadedData.asObservable()
         
-        let loadNext = _loaded.flatMapLatest { _ -> Observable<[ArticleViewModel]> in
+        self.data = loaded.flatMapLatest { _ -> Observable<[ArticleViewModel]> in
             return self.articleRepository.fetchTopHeadlines()
                 .trackActivity(activityIndicator)
                 .map{ $0.map { ArticleViewModel(article: $0) } }
         }
-        
-        _ = loadNext.subscribe(onNext: { (articles) in
-            self.loadedData.accept(self.loadedData.value + articles)
-        })
         
         _ = selectedArticle.subscribe(onNext: {router.trigger(.detail(detailedData: $0))})
         

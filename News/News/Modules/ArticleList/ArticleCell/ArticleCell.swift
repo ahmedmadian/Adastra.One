@@ -22,7 +22,7 @@ class ArticleCell: UITableViewCell {
         containerView.makeRoundedCorners(with: 20)
         articleImageView.sd_setImage(with: URL(string: viewModel.posterImageURL), placeholderImage: nil)
         self.headlineLabel.text = viewModel.headline
-        self.puplishedDateLabel.text = viewModel.date
+        self.puplishedDateLabel.text = self.formatDate(with: viewModel.date)
         animateCell()
     }
     
@@ -34,5 +34,10 @@ class ArticleCell: UITableViewCell {
             self.layer.transform = CATransform3DIdentity
             self.alpha = 1.0
         }
+    }
+    
+    private func formatDate(with stringDate: String) -> String {
+        let date = DateConvertor.shared.getConverted(dateString: stringDate, fromFormat: .yyyyMMddTHHmmssZ, toFormat: .MMMdyyyyhmma)
+        return date
     }
 }

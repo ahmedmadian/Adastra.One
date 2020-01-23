@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F721322FC11639D61E9C828 /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BDBC39933487431CB6BEE6 /* Pods_News.framework */; };
 		DE50903423D9A9530091BC93 /* Animation+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50903323D9A9530091BC93 /* Animation+Fade.swift */; };
+		DE50903623D9BAE50091BC93 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50903523D9BAE50091BC93 /* DateConverter.swift */; };
 		DED7C02823D7420200D90075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7C02723D7420200D90075 /* AppDelegate.swift */; };
 		DED7C02F23D7420200D90075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED7C02D23D7420200D90075 /* Main.storyboard */; };
 		DED7C03123D7420400D90075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED7C03023D7420400D90075 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		949A561C64BEB6225F4CDDFB /* Pods-News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.release.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.release.xcconfig"; sourceTree = "<group>"; };
 		DE50903323D9A9530091BC93 /* Animation+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Fade.swift"; sourceTree = "<group>"; };
+		DE50903523D9BAE50091BC93 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		DED7C02423D7420200D90075 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED7C02723D7420200D90075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DED7C02E23D7420200D90075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				DED7C08323D7AE5B00D90075 /* BaseViewController.swift */,
 				DED7C08523D7B23A00D90075 /* ActivityIndicator.swift */,
 				DED7C09623D8651400D90075 /* BindableType.swift */,
+				DE50903523D9BAE50091BC93 /* DateConverter.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				DED7C03D23D7530E00D90075 /* BaseCoordinator.swift in Sources */,
 				DED7C09E23D88A8800D90075 /* ArticleCollectionCell.swift in Sources */,
 				DED7C08D23D7B79900D90075 /* ArticleDetailViewModel.swift in Sources */,
+				DE50903623D9BAE50091BC93 /* DateConverter.swift in Sources */,
 				DED7C05423D76D8D00D90075 /* Endpointable.swift in Sources */,
 				DED7C02823D7420200D90075 /* AppDelegate.swift in Sources */,
 				DED7C09723D8651400D90075 /* BindableType.swift in Sources */,
