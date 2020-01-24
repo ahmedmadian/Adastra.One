@@ -10,13 +10,14 @@ import UIKit
 import SDWebImage
 
 class ArticleCell: UITableViewCell {
+    
     //MARK:- IBOutlet
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var articleImageView: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var puplishedDateLabel: UILabel!
     
-    
+    // MARK: - Methods
     func configCellAppearnce(with viewModel: ArticleViewModel) {
         articleImageView.makeRoundedCorners(with: 15.0)
         containerView.makeRoundedCorners(with: 20)

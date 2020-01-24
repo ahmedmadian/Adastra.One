@@ -15,37 +15,21 @@ class ArticleListViewController: BaseViewController, BindableType {
     //MARK:- IBOutlet
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Properties
     var viewModel: ArticleListViewModelType!
     private let disposeBag = DisposeBag()
-    
+    private let refreshControl = UIRefreshControl()
+ 
+    // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         congifTableView()
     }
     
+    // MARK: - Methods
     func bindViewModel() {
         
-        // View Controller UI actions to the View Model
-        
-        rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
-            .take(1)
-            .map { _ in }
-            .bind(to: viewModel.input.loaded)
-        
-        tableView.rx.modelSelected(ArticleViewModel.self)
-            .bind(to: viewModel.input.selectedArticle)
-            .disposed(by: disposeBag)
-        
-        
-        // View Controller UI actions to the View Model
-
-        viewModel.output.loading.subscribe(onNext: { loading in
-            if loading {
-                self.showLoader()
-            } else {
-                self.hideLoader()
-            }
-        }).disposed(by: disposeBag)
+        /// View Controller UI actions to the View Model
         
         viewModel.output.title
             .bind(to: navigationItem.rx.title)
@@ -53,12 +37,30 @@ class ArticleListViewController: BaseViewController, BindableType {
         
         viewModel.output.data
             .observeOn(MainScheduler.instance)
+            .do(onNext: { [weak self] _ in self?.refreshControl.endRefreshing() })
             .bind(to: tableView.rx.items(cellIdentifier: ArticleCell.typeName, cellType: ArticleCell.self)) { item, data, cell in
                 cell.configCellAppearnce(with: data)
         }.disposed(by: disposeBag)
         
+        viewModel.output.errorMessage
+            .subscribe(onNext: {
+                self.refreshControl.endRefreshing()
+                self.presentAlert(message: $0)
+            })
+            .disposed(by: disposeBag)
         
-        viewModel.output.errorMessage.subscribe(onNext: { self.presentAlert(message: $0)}).disposed(by: disposeBag)
+        // View Controller UI actions to the View Model
+        
+        refreshControl.rx.controlEvent(.valueChanged)
+            .bind(to: viewModel.input.loaded)
+            .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(ArticleViewModel.self)
+            .bind(to: viewModel.input.selectedArticle)
+            .disposed(by: disposeBag)
+        
+        
+        refreshControl.sendActions(for: .valueChanged)
     }
     
     private func congifTableView() {
@@ -66,6 +68,7 @@ class ArticleListViewController: BaseViewController, BindableType {
         tableView.register(articalNib, forCellReuseIdentifier: ArticleCell.typeName)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 350
+        tableView.addSubview(refreshControl)
     }
 
 }
