@@ -23,6 +23,7 @@ class ArticleListViewModel: ArticleListViewModelType, ArticleListViewModelInput,
     var data: Observable<[ArticleViewModel]>
     var title: Observable<String>
     var loading: Observable<Bool>
+    var errorMessage: Observable<String>
     
     // MARK:- Properties
     private var router: UnownedRouter<AppStartUpRoute>
@@ -44,11 +45,18 @@ class ArticleListViewModel: ArticleListViewModelType, ArticleListViewModelInput,
         let activityIndicator = ActivityIndicator()
         loading = activityIndicator.asObservable()
         
+        let _errorMessage = PublishSubject<String>()
+        self.errorMessage = _errorMessage.asObservable()
+        
         data = loadedData.asObservable()
         
         self.data = loaded.flatMapLatest { _ -> Observable<[ArticleViewModel]> in
             return self.articleRepository.fetchTopHeadlines()
                 .trackActivity(activityIndicator)
+            .catchError { error in
+                _errorMessage.onNext(error.localizedDescription)
+                return Observable.empty()
+            }
                 .map{ $0.map { ArticleViewModel(article: $0) } }
         }
         

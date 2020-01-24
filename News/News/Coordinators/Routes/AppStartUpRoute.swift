@@ -8,8 +8,6 @@
 
 import Foundation
 import XCoordinator
-import RxSwift
-import RxCocoa
 
 enum AppStartUpRoute: Route {
     case articles

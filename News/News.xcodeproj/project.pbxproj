@@ -158,10 +158,7 @@
 				DED7C04523D7689E00D90075 /* Model */,
 				DED7C03B23D752F500D90075 /* Library */,
 				DED7C03E23D7533E00D90075 /* App */,
-				DED7C02D23D7420200D90075 /* Main.storyboard */,
-				DED7C03023D7420400D90075 /* Assets.xcassets */,
-				DED7C03223D7420400D90075 /* LaunchScreen.storyboard */,
-				DED7C03523D7420400D90075 /* Info.plist */,
+				DEE12BA623DB6CAF0060FAD2 /* Resources */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -257,8 +254,8 @@
 		DED7C06D23D77BDF00D90075 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				DED7C08723D7B72900D90075 /* ArticleDetail */,
 				DED7C07023D77C0400D90075 /* ArticleList */,
+				DED7C08723D7B72900D90075 /* ArticleDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -329,6 +326,17 @@
 				DED7C0A323D89B0900D90075 /* Transition+presentFullScreen.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		DEE12BA623DB6CAF0060FAD2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DED7C02D23D7420200D90075 /* Main.storyboard */,
+				DED7C03023D7420400D90075 /* Assets.xcassets */,
+				DED7C03223D7420400D90075 /* LaunchScreen.storyboard */,
+				DED7C03523D7420400D90075 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,7 +634,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = News/Info.plist;
+				INFOPLIST_FILE = News/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -644,7 +652,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = News/Info.plist;
+				INFOPLIST_FILE = News/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

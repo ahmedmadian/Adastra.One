@@ -19,6 +19,7 @@ protocol ArticleListViewModelOutput {
     var data: Observable<[ArticleViewModel]> {get}
     var title: Observable<String> {get}
     var loading: Observable<Bool> {get}
+    var errorMessage: Observable<String> {get}
 }
 
 protocol ArticleListViewModelType {

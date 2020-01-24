@@ -57,6 +57,8 @@ class ArticleListViewController: BaseViewController, BindableType {
                 cell.configCellAppearnce(with: data)
         }.disposed(by: disposeBag)
         
+        
+        viewModel.output.errorMessage.subscribe(onNext: { self.presentAlert(message: $0)}).disposed(by: disposeBag)
     }
     
     private func congifTableView() {

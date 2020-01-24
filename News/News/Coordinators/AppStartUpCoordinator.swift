@@ -17,6 +17,7 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
         Config(navigationController: self.rootViewController)
     }
     
+    ///manage modules transition
     override func prepareTransition(for route: AppStartUpRoute) -> NavigationTransition {
         switch route {
             
@@ -45,6 +46,7 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
         }
     }
     
+    ///setup navigation bar appearnce
     private func Config(navigationController: UINavigationController) {
         navigationController.navigationBar.isTranslucent = true
         navigationController.navigationBar.prefersLargeTitles = true
