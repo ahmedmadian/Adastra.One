@@ -23,24 +23,28 @@ class ArticleDetailViewController: UIViewController, BindableType {
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var safariButton: UIBarButtonItem!
     
-    
+    // MARK: - Properties
     private let disposeBag = DisposeBag()
     var viewModel: ArticleDetailViewModelType!
     
+    // MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCells()
+        registerCell()
         configureCollectionView()
     }
     
+    // MARK:- Methods
     func bindViewModel() {
         
         rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
-        .take(1)
-        .map { _ in }
-        .bind(to: viewModel.input.loaded)
+            .take(1)
+            .map { _ in }
+            .bind(to: viewModel.input.loaded).disposed(by: disposeBag)
         
-        exitButton.rx.tap.bind(to: viewModel.input.exit).disposed(by: disposeBag)
+        exitButton.rx.tap
+            .bind(to: viewModel.input.exit)
+            .disposed(by: disposeBag)
         
         safariButton.rx.tap
             .bind(to: viewModel.input.openSafari)
@@ -51,9 +55,9 @@ class ArticleDetailViewController: UIViewController, BindableType {
         .disposed(by: disposeBag)
         
         
-        viewModel.output.articleDetail.subscribe(onNext: { (article) in
-            self.fillDetails(with: article)
-        }).disposed(by: disposeBag)
+        viewModel.output.articleDetail
+            .subscribe(onNext: { (article) in self.fillDetails(with: article) })
+            .disposed(by: disposeBag)
         
         viewModel.output.collectionData
             .observeOn(MainScheduler.instance)
@@ -68,15 +72,15 @@ class ArticleDetailViewController: UIViewController, BindableType {
         headlineLabel.text = viewModel.headline
         authorLabel.text = "by: \(viewModel.authorName)"
         descriptionLabel.text = viewModel.articleDescription
-        sourceLabel.text = "More from '\(viewModel.sourceName)'"
+        sourceLabel.text = "more from '\(viewModel.sourceName)'"
     }
     
-    private func registerCells() {
+    private func registerCell() {
         let articleCollectionNib = UINib(nibName: ArticleCollectionCell.typeName, bundle: nil)
         collectionView.register(articleCollectionNib, forCellWithReuseIdentifier: ArticleCollectionCell.typeName)
     }
     
-    fileprivate func configureCollectionView() {
+    private func configureCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         let itemWidth = collectionView.bounds.width/2 - 20

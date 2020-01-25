@@ -11,9 +11,11 @@ import SDWebImage
 
 class ArticleCollectionCell: UICollectionViewCell {
 
+    // MARK: - Outlets
     @IBOutlet weak var artilceImage: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
     
+    // MARK:- Methods
     func configCellAppearnce(with viewModel: ArticleViewModel){
         artilceImage.makeRoundedCorners(with: 30)
         artilceImage.sd_setImage(with: URL(string:viewModel.posterImageURL), placeholderImage: nil)

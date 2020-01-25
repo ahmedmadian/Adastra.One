@@ -24,15 +24,17 @@ class ArticleListViewModel: ArticleListViewModelType, ArticleListViewModelInput,
     var title: Observable<String>
     var errorMessage: Observable<String>
     
-    // MARK:- Properties
+    // MARK: - Dependancies
     private var router: UnownedRouter<AppStartUpRoute>
     private let articleRepository: ArticleRepository
     
     init(router: UnownedRouter<AppStartUpRoute>, dataRepo: ArticleRepository) {
         
+        /// Init Dependancies
         self.router = router
         self.articleRepository = dataRepo
         
+        /// Init Inputs
         self.loaded = PublishSubject<Void>().asObserver()
         
         self.selectedArticle = PublishSubject<ArticleViewModel>().asObserver()

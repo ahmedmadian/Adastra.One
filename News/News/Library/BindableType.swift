@@ -6,14 +6,13 @@
 //  Copyright © 2020 Ahmed Madian. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 protocol BindableType: AnyObject {
     associatedtype ViewModelType
-
+    
     var viewModel: ViewModelType! { get set }
-
+    
     func bindViewModel()
 }
 

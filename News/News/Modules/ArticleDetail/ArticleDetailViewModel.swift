@@ -13,49 +13,41 @@ import RxCocoa
 
 class ArticleDetailViewModel: ArticleDetailViewModelType, ArticleDetailViewModelInput, ArticleDetailViewModelOutput {
     
-    //Input
+    // MARK: - Input
     var loaded: PublishSubject<Void>
     var exit: PublishSubject<Void>
     var openSafari: PublishSubject<Void>
     
-    //Output
+    // MARK: - Output
     var articleDetail: BehaviorRelay<ArticleViewModel>
     var collectionData: Observable<[ArticleViewModel]>
     
-    private let data: BehaviorRelay<ArticleViewModel>
-    private let loadedData: BehaviorRelay<[ArticleViewModel]>
+    // MARK: - Dependancies
     private let articleRepository: ArticleRepository
     
     init(router: UnownedRouter<AppStartUpRoute>, detailedData: ArticleViewModel, dataRepo: ArticleRepository) {
+        
+        /// Init Dependancies
         self.articleRepository = dataRepo
-        self.data =  BehaviorRelay<ArticleViewModel>(value: detailedData)
         
-        let _loaded = PublishSubject<Void>()
-        self.loaded = _loaded.asObserver()
-        
-        self.articleDetail = data
-        
-        loadedData = BehaviorRelay<[ArticleViewModel]>(value: [])
-        
-        collectionData = loadedData.asObservable()
-        
+        /// Init Inputs
+        self.loaded = PublishSubject<Void>().asObserver()
         exit = PublishSubject<Void>().asObserver()
-        
         openSafari = PublishSubject<Void>().asObserver()
         
-        let loadNext = _loaded.flatMapLatest { _ -> Observable<[ArticleViewModel]> in
-            return self.articleRepository.fetchTopHeadlines(with: self.data.value.sourceId!)
+        /// Init Outputs
+        self.articleDetail = BehaviorRelay<ArticleViewModel>(value: detailedData)
+        collectionData = Observable.of([])
+        
+        collectionData = collectionData.flatMapLatest { _ -> Observable<[ArticleViewModel]> in
+            return self.articleRepository.fetchTopHeadlines(with: self.articleDetail.value.sourceId!)
                 .map{ $0.map { ArticleViewModel(article: $0) } }
         }
-        
-       _ = loadNext.subscribe(onNext: { (articles) in
-           self.loadedData.accept(self.loadedData.value + articles)
-       })
         
         _ = exit.subscribe(onNext: {router.trigger(.exit)})
         
         _ = openSafari.subscribe(onNext: {
-            if let url = URL(string: self.data.value.url) {
+            if let url = URL(string: self.articleDetail.value.url) {
                 router.trigger(.safari(url: url))
             }
         })
