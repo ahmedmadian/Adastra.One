@@ -148,12 +148,12 @@
 		DED7C02623D7420200D90075 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				DED7C03E23D7533E00D90075 /* App */,
 				DED7C09023D85F8600D90075 /* Coordinators */,
+				DED7C03B23D752F500D90075 /* Library */,
+				DED7C04523D7689E00D90075 /* Model */,
 				DED7C06D23D77BDF00D90075 /* Modules */,
 				DED7C04C23D76BA100D90075 /* Persistence */,
-				DED7C04523D7689E00D90075 /* Model */,
-				DED7C03B23D752F500D90075 /* Library */,
-				DED7C03E23D7533E00D90075 /* App */,
 				DEE12BA623DB6CAF0060FAD2 /* Resources */,
 			);
 			path = News;
@@ -289,9 +289,9 @@
 		DED7C09023D85F8600D90075 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				DED7C09123D85F9C00D90075 /* AppStartUpCoordinator.swift */,
 				DE50903223D9A9470091BC93 /* Animation */,
 				DED7C0A223D89AE800D90075 /* Extension */,
-				DED7C09123D85F9C00D90075 /* AppStartUpCoordinator.swift */,
 				DED7C09523D8603A00D90075 /* Routes */,
 			);
 			path = Coordinators;

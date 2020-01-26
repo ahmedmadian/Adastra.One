@@ -22,10 +22,10 @@ extension InteractiveTransitionAnimation {
     fileprivate static let fade = InteractiveTransitionAnimation(duration: defaultAnimationDuration) { transitionContext in
         let containerView = transitionContext.containerView
         let toView = transitionContext.view(forKey: .to)!
-
+        
         toView.alpha = 0.0
         containerView.addSubview(toView)
-
+        
         UIView.animate(withDuration: defaultAnimationDuration, delay: 0, options: [.curveEaseIn], animations: {
             toView.alpha = 1.0
         }, completion: { _ in
@@ -35,7 +35,7 @@ extension InteractiveTransitionAnimation {
     
     fileprivate static let fadeDismissal = InteractiveTransitionAnimation(duration: defaultAnimationDuration) { transitionContext in
         let fromView: UIView = transitionContext.view(forKey: .from)!
-
+        
         fromView.alpha = 1.0
         fromView.removeFromSuperview()
         

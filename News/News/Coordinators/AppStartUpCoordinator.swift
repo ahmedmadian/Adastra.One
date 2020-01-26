@@ -39,7 +39,7 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
             
         case .exit:
             return .dismissToRoot()
-        
+            
         case .safari(let url):
             let svc = SFSafariViewController(url: url)
             return .present(svc)
